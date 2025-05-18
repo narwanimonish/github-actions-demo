@@ -1,0 +1,19 @@
+name: First Workflow
+on: [push]
+
+jobs:
+  run-shell-cmds:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo string
+        run: echo "Hello Github Actions!!!"
+      - name: Multiline Commands
+        run: |
+          node -v
+          npm -v
+
+  Parallel-job:
+    runs-on: macos-latest
+    steps:
+      - name: View SW version
+        run: sw_vers
