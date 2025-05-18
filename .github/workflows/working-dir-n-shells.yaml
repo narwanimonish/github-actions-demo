@@ -1,0 +1,40 @@
+name: Working Dir & Shells
+on: [push]
+
+jobs:
+  display-wd-info-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Disp WD
+        run: |
+          pwd
+          ls -a
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+      - name: Disp WD Custom
+        working-directory: /home/runner
+        run: |
+          pwd
+          ls -a
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+
+  display-wd-info-windows:
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Disp WD
+        run: |
+          pwd
+          ls -a
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+      - name: Disp WD Custom
+        working-directory: /home/runner
+        run: |
+          pwd
+          ls -a
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
