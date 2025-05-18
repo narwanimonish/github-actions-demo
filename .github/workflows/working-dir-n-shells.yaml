@@ -32,7 +32,6 @@ jobs:
           echo $GITHUB_SHA
           echo $GITHUB_REPOSITORY
       - name: Disp WD Custom
-        working-directory: /home/runner
         run: |
           pwd
           ls -a
