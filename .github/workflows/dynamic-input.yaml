@@ -1,0 +1,19 @@
+name: Dyanmic Input
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        description: 'Env to deploy'
+        required: true
+      service:
+        description: 'Service name'
+        required: true
+
+jobs:
+  display-input:
+    runs-on: ubuntu-latest
+    steps:
+      - name: display input variables
+        run: |
+          echo "${{inputs.env}}"
+          echo "${{inputs.service}}"
